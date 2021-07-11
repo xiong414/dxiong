@@ -1,3 +1,10 @@
+# !/usr/bin/env python3
+# coding=utf-8
+'''
+@Author: Xiong Guoqing
+@Date: 2021-07-11 10:53:51
+@Email: xiong3219@icloud.com
+'''
 from flask import Flask, render_template, request
 import hashlib
 import xmltodict
@@ -7,8 +14,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def get_index():
-    res = '<p>xiongguoqing</p>'
-    return res
+    return render_template("index.html", val1=time.time())
 
 @app.route('/wx', methods=["GET", "POST"])
 def wx():
